@@ -11,14 +11,14 @@ namespace Orders
         Оплачен,
         Доставлен
     }
-    class Orders
+    class Order
     {
         public int id;
         public double price;
         public DateTime date;
         public Status st;
 
-        public Orders(int id, double price, DateTime date, Status st)
+        public Order(int id, double price, DateTime date, Status st)
         {
             this.id = id;
             this.price = price;
