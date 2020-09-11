@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Orders
+namespace MerchantClassLibraries
 {
-    enum Status
+    public enum Status
     {
         Обрабатывается,
         Оплачен,
         Доставлен
     }
-    class Order
+    public class Order
     {
         public int id;
         public double price;
