@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MerchantClassLibraries;
 
 namespace MerchantConsoleApplication
@@ -14,7 +15,7 @@ namespace MerchantConsoleApplication
                 Console.Clear();
                 int choice = 0;
 
-                Order[] orders = OrdersManager.GenerateOrders();
+                List<Order> orders = OrdersManager.GenerateOrders();
 
                 Console.WriteLine("Выберите действие:");
                 Console.WriteLine("1. Отобразить информацию про заказ по id");
@@ -51,7 +52,7 @@ namespace MerchantConsoleApplication
 
 
 
-        static void OrderId(Order[] orders)
+        static void OrderId(List<Order> orders)
         {
             int id;
 
@@ -99,10 +100,10 @@ namespace MerchantConsoleApplication
             }
         }
 
-        static void OrderFullInfo(Order[] orders)
+        static void OrderFullInfo(List<Order> orders)
         {
             Console.Clear();
-            for (int i = 0; i < orders.Length; i++)
+            for (int i = 0; i < orders.Count; i++)
             {
                 orders[i].GetFullInfo();
             }
