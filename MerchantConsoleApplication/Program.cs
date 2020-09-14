@@ -33,7 +33,7 @@ namespace MerchantConsoleApplication
                 switch (choice)
                 {
                     case 1:
-                        GetOrderInfoOnId(orders);
+                        GetOrderInfoById(orders);
                         break;
                     case 2:
                         DisplayAllOrdersInfo(orders);
@@ -51,7 +51,7 @@ namespace MerchantConsoleApplication
 
 
 
-        static void GetOrderInfoOnId(Order[] orders)
+        static void GetOrderInfoById(Order[] orders)
         {
             int id;
 
@@ -104,7 +104,7 @@ namespace MerchantConsoleApplication
             Console.Clear();
             for (int i = 0; i < orders.Length; i++)
             {
-                orders[i].DIsplayOrderInfo();
+                orders[i].DisplayOrderInfo();
             }
             Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
             Console.ReadKey();

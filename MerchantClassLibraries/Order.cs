@@ -34,7 +34,7 @@ namespace MerchantClassLibraries
             Console.ReadKey();
         }
 
-        public void DIsplayOrderInfo()
+        public void DisplayOrderInfo()
         {
             Console.WriteLine($"ID: {id}\t Цена: {price}\t Дата заказа: {date}\t Статус заказа: {status}");
         }
