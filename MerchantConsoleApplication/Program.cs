@@ -33,10 +33,10 @@ namespace MerchantConsoleApplication
                 switch (choice)
                 {
                     case 1:
-                        OrderId(orders);
+                        GetOrderInfoById(orders);
                         break;
                     case 2:
-                        OrderFullInfo(orders);
+                        DisplayAllOrdersInfo(orders);
                         break;
                     case 3:
                         Environment.Exit(0);
@@ -51,7 +51,7 @@ namespace MerchantConsoleApplication
 
 
 
-        static void OrderId(Order[] orders)
+        static void GetOrderInfoById(Order[] orders)
         {
             int id;
 
@@ -75,19 +75,19 @@ namespace MerchantConsoleApplication
                 switch (id)
                 {
                     case 1:
-                        orders[0].GetOrdersInfo();
+                        orders[0].DisplayOrderInfoById();
                         return;
                     case 2:
-                        orders[1].GetOrdersInfo();
+                        orders[1].DisplayOrderInfoById();
                         return;
                     case 3:
-                        orders[2].GetOrdersInfo();
+                        orders[2].DisplayOrderInfoById();
                         return;
                     case 4:
-                        orders[3].GetOrdersInfo();
+                        orders[3].DisplayOrderInfoById();
                         return;
                     case 5:
-                        orders[4].GetOrdersInfo();
+                        orders[4].DisplayOrderInfoById();
                         return;
                     default:
                         Console.WriteLine("Такого ID не существует, нажмите любую клавишу.");
@@ -99,12 +99,12 @@ namespace MerchantConsoleApplication
             }
         }
 
-        static void OrderFullInfo(Order[] orders)
+        static void DisplayAllOrdersInfo(Order[] orders)
         {
             Console.Clear();
             for (int i = 0; i < orders.Length; i++)
             {
-                orders[i].GetFullInfo();
+                orders[i].DisplayOrderInfo();
             }
             Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
             Console.ReadKey();
