@@ -75,19 +75,29 @@ namespace MerchantConsoleApplication
                 switch (id)
                 {
                     case 1:
+                        Console.Clear();
                         orders[0].DisplayOrderInfoById();
+                        Console.ReadKey();
                         return;
                     case 2:
+                        Console.Clear();
                         orders[1].DisplayOrderInfoById();
+                        Console.ReadKey();
                         return;
                     case 3:
+                        Console.Clear();
                         orders[2].DisplayOrderInfoById();
+                        Console.ReadKey();
                         return;
                     case 4:
+                        Console.Clear();
                         orders[3].DisplayOrderInfoById();
+                        Console.ReadKey();
                         return;
                     case 5:
+                        Console.Clear();
                         orders[4].DisplayOrderInfoById();
+                        Console.ReadKey();
                         return;
                     default:
                         Console.WriteLine("Такого ID не существует, нажмите любую клавишу.");

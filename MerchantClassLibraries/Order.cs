@@ -28,10 +28,8 @@ namespace MerchantClassLibraries
 
         public void DisplayOrderInfoById()
         {
-            Console.Clear();
             Console.WriteLine($"Заказ №{id}\n ID: {id}\n Цена: {price}\n Дата заказа: {date}\n Статус заказа: {status}");
             Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
-            Console.ReadKey();
         }
 
         public void DisplayOrderInfo()
