@@ -119,7 +119,7 @@ namespace MerchantConsoleApplication
             }
         }
 
-        static void DisplayAllOrdersInfo(Order[] orders)
+        static void DisplayAllOrdersInfo(List<Order> orders)
         {
             Console.Clear();
             for (int i = 0; i < orders.Count; i++)
