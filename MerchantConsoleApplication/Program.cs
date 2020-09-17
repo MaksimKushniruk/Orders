@@ -76,27 +76,36 @@ namespace MerchantConsoleApplication
                 {
                     case 1:
                         Console.Clear();
-                        orders[0].DisplayOrderInfoById();
+                        Console.WriteLine(orders[0].GetOrderInfoById());
+                        Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
                         Console.ReadKey();
                         return;
                     case 2:
                         Console.Clear();
-                        orders[1].DisplayOrderInfoById();
+                        orders[1].GetOrderInfoById();
+                        Console.WriteLine(orders[1].GetOrderInfoById());
+                        Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
                         Console.ReadKey();
                         return;
                     case 3:
                         Console.Clear();
-                        orders[2].DisplayOrderInfoById();
+                        orders[2].GetOrderInfoById();
+                        Console.WriteLine(orders[2].GetOrderInfoById());
+                        Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
                         Console.ReadKey();
                         return;
                     case 4:
                         Console.Clear();
-                        orders[3].DisplayOrderInfoById();
+                        orders[3].GetOrderInfoById();
+                        Console.WriteLine(orders[3].GetOrderInfoById());
+                        Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
                         Console.ReadKey();
                         return;
                     case 5:
                         Console.Clear();
-                        orders[4].DisplayOrderInfoById();
+                        Console.WriteLine(orders[4].GetOrderInfoById());
+                        orders[4].GetOrderInfoById();
+                        Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
                         Console.ReadKey();
                         return;
                     default:
@@ -114,7 +123,7 @@ namespace MerchantConsoleApplication
             Console.Clear();
             for (int i = 0; i < orders.Length; i++)
             {
-                orders[i].DisplayOrderInfo();
+                Console.WriteLine(orders[i].GetOrderInfoById());
             }
             Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
             Console.ReadKey();
