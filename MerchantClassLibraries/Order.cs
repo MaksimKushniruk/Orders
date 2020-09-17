@@ -26,17 +26,10 @@ namespace MerchantClassLibraries
             this.status = status;
         }
 
-        public void DisplayOrderInfoById()
+        public string GetOrderInfoById()
         {
-            Console.Clear();
-            Console.WriteLine($"Заказ №{id}\n ID: {id}\n Цена: {price}\n Дата заказа: {date}\n Статус заказа: {status}");
-            Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
-            Console.ReadKey();
-        }
-
-        public void DisplayOrderInfo()
-        {
-            Console.WriteLine($"ID: {id}\t Цена: {price}\t Дата заказа: {date}\t Статус заказа: {status}");
+            string orderInfoById = "Заказ №" + id + " ID: " + id + " Цена: " + price + " Дата заказа: " + date + " Статус заказа: " + status;
+            return orderInfoById;
         }
     }
 }
