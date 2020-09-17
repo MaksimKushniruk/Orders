@@ -26,7 +26,7 @@ namespace MerchantClassLibraries
             this.status = status;
         }
 
-        public void GetOrdersInfo()
+        public void DisplayOrderInfoById()
         {
             Console.Clear();
             Console.WriteLine($"Заказ №{id}\n ID: {id}\n Цена: {price}\n Дата заказа: {date}\n Статус заказа: {status}");
@@ -34,7 +34,7 @@ namespace MerchantClassLibraries
             Console.ReadKey();
         }
 
-        public void GetFullInfo()
+        public void DisplayOrderInfo()
         {
             Console.WriteLine($"ID: {id}\t Цена: {price}\t Дата заказа: {date}\t Статус заказа: {status}");
         }
