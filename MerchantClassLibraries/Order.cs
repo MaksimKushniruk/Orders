@@ -13,22 +13,22 @@ namespace MerchantClassLibraries
     }
     public class Order
     {
-        public int id;
-        public double price;
-        public DateTime date;
-        public Status status;
+        public int Id { get; set; }
+        public double Price { get; set; }
+        public DateTime Date { get; set; }
+        public Status Status { get; set; }
 
         public Order(int id, double price, DateTime date, Status status)
         {
-            this.id = id;
-            this.price = price;
-            this.date = date;
-            this.status = status;
+            this.Id = id;
+            this.Price = price;
+            this.Date = date;
+            this.Status = status;
         }
 
         public string GetOrderInfoById()
         {
-            string orderInfoById = "Заказ №" + id + " ID: " + id + " Цена: " + price + " Дата заказа: " + date + " Статус заказа: " + status;
+            string orderInfoById = "Заказ №" + Id + " ID: " + Id + " Цена: " + Price + " Дата заказа: " + Date + " Статус заказа: " + Status;
             return orderInfoById;
         }
     }
