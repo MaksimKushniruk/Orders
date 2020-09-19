@@ -20,11 +20,11 @@ namespace MerchantClassLibraries
 
             List<Order> orders = new List<Order>
             {
-                new Order(1, 500.50, date1, processed),
-                new Order(2, 346.79, date2, paid),
-                new Order(3, 17643.2, date3, delivered),
-                new Order(4, 2131.43, date4, delivered),
-                new Order(5, 1216.21, date5, delivered)
+                new Order(1, 500.50M, date1, processed),
+                new Order(2, 346.79M, date2, paid),
+                new Order(3, 17643.2M, date3, delivered),
+                new Order(4, 2131.43M, date4, delivered),
+                new Order(5, 1216.21M, date5, delivered)
             };
 
             return orders;

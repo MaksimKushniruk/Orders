@@ -14,11 +14,11 @@ namespace MerchantClassLibraries
     public class Order
     {
         public int Id { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         public DateTime Date { get; set; }
         public Status Status { get; set; }
 
-        public Order(int id, double price, DateTime date, Status status)
+        public Order(int id, decimal price, DateTime date, Status status)
         {
             this.Id = id;
             this.Price = price;
