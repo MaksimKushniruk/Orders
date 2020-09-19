@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using MerchantClassLibraries;
 
 namespace MerchantConsoleApplication
@@ -54,7 +55,7 @@ namespace MerchantConsoleApplication
 
         static void GetOrderInfoById(List<Order> orders)
         {
-            int id;
+            int id = 0;
 
             while (true)
             {
@@ -69,53 +70,21 @@ namespace MerchantConsoleApplication
                 {
                     Console.WriteLine("Такого ID не существует, нажмите любую клавишу.");
                     Console.ReadKey();
-                    Console.Clear();
-                    continue;
                 }
 
-                switch (id)
+                if (0 < id && id <= orders.Count)
                 {
-                    case 1:
-                        Console.Clear();
-                        Console.WriteLine(orders[0].GetOrderInfoById());
-                        Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
-                        Console.ReadKey();
-                        return;
-                    case 2:
-                        Console.Clear();
-                        orders[1].GetOrderInfoById();
-                        Console.WriteLine(orders[1].GetOrderInfoById());
-                        Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
-                        Console.ReadKey();
-                        return;
-                    case 3:
-                        Console.Clear();
-                        orders[2].GetOrderInfoById();
-                        Console.WriteLine(orders[2].GetOrderInfoById());
-                        Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
-                        Console.ReadKey();
-                        return;
-                    case 4:
-                        Console.Clear();
-                        orders[3].GetOrderInfoById();
-                        Console.WriteLine(orders[3].GetOrderInfoById());
-                        Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
-                        Console.ReadKey();
-                        return;
-                    case 5:
-                        Console.Clear();
-                        Console.WriteLine(orders[4].GetOrderInfoById());
-                        orders[4].GetOrderInfoById();
-                        Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
-                        Console.ReadKey();
-                        return;
-                    default:
-                        Console.WriteLine("Такого ID не существует, нажмите любую клавишу.");
-                        Console.ReadKey();
-                        Console.Clear();
-                        break;
+                    var order = orders.FirstOrDefault(o => o.Id == id);
+                    Console.WriteLine(order.GetOrderInfoById());
+                    Console.WriteLine("Чтобы выйти в главное меню нажмите любую клавишу.");
+                    Console.ReadKey();
+                    return;
                 }
-
+                else
+                {
+                    Console.WriteLine("Такого ID не существует, нажмите любую клавишу.");
+                    Console.ReadKey();
+                }
             }
         }
 
