@@ -1,31 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace MerchantClassLibraries
 {
     public class OrdersManager
     {
-        public static List<Order> GenerateOrders()
+        public static List<Order> GenerateOrders(int quantity)
         {
-            Status processed = Status.Обрабатывается;
-            Status paid = Status.Оплачен;
-            Status delivered = Status.Доставлен;
+            List<Order> orders = new List<Order>();
+            Random rnd = new Random();
+            int year;
+            int month;
+            int day;
 
-            DateTime date1 = new DateTime(2020, 7, 25, 12, 45, 15);
-            DateTime date2 = new DateTime(2020, 7, 17, 10, 30, 49);
-            DateTime date3 = new DateTime(2020, 7, 12, 17, 22, 59);
-            DateTime date4 = new DateTime(2020, 6, 29, 15, 16, 23);
-            DateTime date5 = new DateTime(2020, 6, 25, 14, 50, 36);
-
-            List<Order> orders = new List<Order>
+            for (int i = 0; i <= quantity; i++)
             {
-                new Order(1, 500.50M, date1, processed),
-                new Order(2, 346.79M, date2, paid),
-                new Order(3, 17643.2M, date3, delivered),
-                new Order(4, 2131.43M, date4, delivered),
-                new Order(5, 1216.21M, date5, delivered)
-            };
+                decimal generatedPrice = (decimal)rnd.Next(0, 10000000) / 100;
+                year = rnd.Next(2010, 2021);
+                month = rnd.Next(1, 13);
+
+                if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+                {
+                    day = rnd.Next(1, 32);
+                }
+                else if (month != 2)
+                {
+                    day = rnd.Next(1, 31);
+                }
+                else if (year % 4 == 0)
+                {
+                    day = rnd.Next(1, 30);
+                }
+                else
+                {
+                    day = rnd.Next(1, 29);
+                }
+                
+                DateTime generatedDate = new DateTime(year, month, day, rnd.Next(0, 24), rnd.Next(0, 60), rnd.Next(0, 60));
+                
+                orders.Add(new Order(i, generatedPrice, generatedDate, (Status)rnd.Next(0, 3)));
+            }
 
             return orders;
         }
