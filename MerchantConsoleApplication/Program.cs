@@ -15,7 +15,7 @@ namespace MerchantConsoleApplication
             {
                 Console.Clear();
                 int choice = 0;
-                int quantityOrders = 0;
+                int quantityOrders;
                 Console.Write("Введите число заказов: ");
 
                 try
