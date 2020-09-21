@@ -15,9 +15,23 @@ namespace MerchantConsoleApplication
             {
                 Console.Clear();
                 int choice = 0;
+                int quantityOrders = 0;
+                Console.Write("Введите число заказов: ");
 
-                List<Order> orders = OrdersManager.GenerateOrders();
+                try
+                {
+                    quantityOrders = Int32.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Вы ввели не число!");
+                    Console.ReadKey();
+                    continue;
+                }
+                
+                List<Order> orders = OrdersManager.GenerateOrders(quantityOrders);
 
+                Console.Clear();
                 Console.WriteLine("Выберите действие:");
                 Console.WriteLine("1. Отобразить информацию про заказ по id");
                 Console.WriteLine("2. Вывести информацию о всех заказах");
@@ -29,7 +43,7 @@ namespace MerchantConsoleApplication
                 }
                 catch
                 {
-                    // Console.WriteLine("Вы ввели не число!");
+                    Console.WriteLine("Вы ввели не число!");
                 }
 
                 switch (choice)

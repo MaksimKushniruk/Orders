@@ -1,31 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace MerchantClassLibraries
 {
     public class OrdersManager
     {
-        public static List<Order> GenerateOrders()
+        public static List<Order> GenerateOrders(int a)
         {
-            Status processed = Status.Обрабатывается;
-            Status paid = Status.Оплачен;
-            Status delivered = Status.Доставлен;
-
-            DateTime date1 = new DateTime(2020, 7, 25, 12, 45, 15);
-            DateTime date2 = new DateTime(2020, 7, 17, 10, 30, 49);
-            DateTime date3 = new DateTime(2020, 7, 12, 17, 22, 59);
-            DateTime date4 = new DateTime(2020, 6, 29, 15, 16, 23);
-            DateTime date5 = new DateTime(2020, 6, 25, 14, 50, 36);
-
-            List<Order> orders = new List<Order>
+            List<Order> orders = new List<Order>();
+            for(int i = 0; i <= a; i++)
             {
-                new Order(1, 500.50M, date1, processed),
-                new Order(2, 346.79M, date2, paid),
-                new Order(3, 17643.2M, date3, delivered),
-                new Order(4, 2131.43M, date4, delivered),
-                new Order(5, 1216.21M, date5, delivered)
-            };
+                Random rnd = new Random(i);
+                decimal generatePrice = rnd.Next(0, 100000);
+                DateTime generateDate = new DateTime(2020, rnd.Next(1, 12), rnd.Next(1, 30), rnd.Next(0, 23), rnd.Next(0, 59), rnd.Next(0, 59));
+                Status generateStatus = (Status)rnd.Next(0, 2);
+                orders.Add(new Order(i, generatePrice, generateDate, generateStatus));
+            }
 
             return orders;
         }
