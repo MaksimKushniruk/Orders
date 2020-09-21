@@ -15,7 +15,7 @@ namespace MerchantClassLibraries
                 Random rnd = new Random(i);
                 decimal generatePrice = rnd.Next(0, 100000);
                 DateTime generateDate = new DateTime(2020, rnd.Next(1, 12), rnd.Next(1, 30), rnd.Next(0, 23), rnd.Next(0, 59), rnd.Next(0, 59));
-                Status generateStatus = (Status)rnd.Next(0, 2);
+                Status generateStatus = (Status)rnd.Next(0, 3);
                 orders.Add(new Order(i, generatePrice, generateDate, generateStatus));
             }
 
